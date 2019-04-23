@@ -12,9 +12,13 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+
 // Routes
-app.get('hello-world', (req, res) => {
-    res.send('Hello Word');
+app.get('hello-gif', (req, res) => {
+    const gifUrl = 'http://media2.giphy.com/media/gYBVM1igrlzH2/giphy.gif'
+    res.render('hello-gif', {
+        gifUrl
+    })
 });
 
 // Start Server
