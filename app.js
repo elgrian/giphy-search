@@ -6,7 +6,12 @@ const express = require('express');
 const app = express();
 
 // Middleware
+const exphbs = require('express-handlebars');
 
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
 // Routes
 app.get('hello-world', (req, res) => {
     res.send('Hello Word');
