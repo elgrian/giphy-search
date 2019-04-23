@@ -1,3 +1,4 @@
+// app.js
 // Require Libraries
 const express = require('express');
 
@@ -7,9 +8,11 @@ const app = express();
 // Middleware
 
 // Routes
+app.get('hello-world', (req, res) => {
+    res.send('Hello Word');
+});
 
 // Start Server
-
 app.listen(3000, () => {
     console.log('Gif Search listening on port localhost:3000!');
 });
